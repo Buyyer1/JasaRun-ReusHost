@@ -29,10 +29,10 @@ import {
   mongoDB,
   mongoDBV2
 } from './lib/mongoDB.js';
-import {
+const {
   useSingleFileAuthState,
   DisconnectReason
-} from '@adiwajshing/baileys';
+} = await import('@adiwajshing/baileys');
 
 const { CONNECTING } = ws
 const { chain } = lodash
