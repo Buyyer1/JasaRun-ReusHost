@@ -29,8 +29,9 @@ import {
   mongoDB,
   mongoDBV2
 } from './lib/mongoDB.js';
+import store from './lib/store.js'
 const {
-  useSingleFileAuthState,
+  // useSingleFileAuthState,
   DisconnectReason
 } = await import('@adiwajshing/baileys');
 
@@ -86,7 +87,7 @@ global.loadDatabase = async function loadDatabase() {
 loadDatabase()
 
 global.authFile = `${opts._[0] || 'session'}.data.json`
-const { state, saveState } = useSingleFileAuthState(global.authFile)
+const { state, saveState } = store.useSingleFileAuthState(global.authFile)
 
 const connectionOptions = {
   printQRInTerminal: true,
